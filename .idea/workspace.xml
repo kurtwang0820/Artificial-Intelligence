@@ -28,47 +28,17 @@
         <entry file="file://$PROJECT_DIR$/pacman.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1311" max-vertical-offset="12977">
-              <caret line="666" column="0" selection-start-line="666" selection-start-column="0" selection-end-line="666" selection-end-column="0" />
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/search.py">
+      <file leaf-file-name="autograder.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/autograder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5828343" vertical-offset="1798" max-vertical-offset="3002">
-              <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4915254" vertical-offset="6009" max-vertical-offset="13908">
-              <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchAgents.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/searchAgents.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4915254" vertical-offset="1943" max-vertical-offset="10317">
-              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2041" max-vertical-offset="12464">
-              <caret line="119" column="11" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.15169661" vertical-offset="627" max-vertical-offset="6650">
+              <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -85,8 +55,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="9" />
+    <option name="x" value="-16" />
+    <option name="y" value="57" />
     <option name="width" value="1616" />
     <option name="height" value="891" />
   </component>
@@ -150,7 +120,7 @@
       <recent name="E:\workspacepy\PacMan" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pacman">
+  <component name="RunManager" selected="Python.autograder">
     <configuration default="false" name="pacman" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -164,8 +134,67 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PacMan" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pacman.py" />
-      <option name="PARAMETERS" value="-l bigMaze -z .5 -p SearchAgent" />
+      <option name="PARAMETERS" value="-l mediumMaze -p SearchAgent -a fn=bfs" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="autograder" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PacMan" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/autograder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="search" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PacMan" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/search.py" />
+      <option name="PARAMETERS" value="-l mediumMaze -p SearchAgent -a fn=bfs" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Doctests in EightPuzzleState" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PacMan" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eightpuzzle.py" />
+      <option name="CLASS_NAME" value="EightPuzzleState" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -292,12 +321,40 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.pacman" />
+    <configuration default="false" name="Doctests in eightpuzzle" type="tests" factoryName="Doctests" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PacMan" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eightpuzzle.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in eightpuzzle" />
+      <item index="1" class="java.lang.String" itemvalue="Python.pacman" />
+      <item index="2" class="java.lang.String" itemvalue="Python.autograder" />
+      <item index="3" class="java.lang.String" itemvalue="Python.search" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in EightPuzzleState" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.pacman" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.autograder" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pacman" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in EightPuzzleState" />
+        <item index="3" class="java.lang.String" itemvalue="Python.search" />
       </list>
     </recent_temporary>
   </component>
@@ -312,8 +369,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="9" width="1616" height="891" extended-state="1" />
-    <editor active="true" />
+    <frame x="-16" y="57" width="1616" height="891" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -322,7 +379,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294271" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3231162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3231162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -365,22 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autograder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7198917" vertical-offset="627" max-vertical-offset="6650">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pacman.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12238" max-vertical-offset="12977">
-          <caret line="666" column="0" selection-start-line="666" selection-start-column="0" selection-end-line="666" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2041" max-vertical-offset="12464">
@@ -407,8 +448,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5828343" vertical-offset="1798" max-vertical-offset="3002">
-          <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2482" max-vertical-offset="3515">
+          <caret line="133" column="16" selection-start-line="133" selection-start-column="16" selection-end-line="133" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eightpuzzle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5039788" vertical-offset="0" max-vertical-offset="5434">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pacman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1311" max-vertical-offset="12977">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autograder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15169661" vertical-offset="627" max-vertical-offset="6650">
+          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
           <folding />
         </state>
       </provider>

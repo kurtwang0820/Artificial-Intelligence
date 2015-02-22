@@ -86,9 +86,9 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
-    print "Start:", problem.getStartState()
-    print "Is the start a goal?", problem.isGoalState(problem.getStartState())
-    print "Start's successors:", problem.getSuccessors(problem.getStartState())
+    # print "Start:", problem.getStartState()
+    # print "Is the start a goal?", problem.isGoalState(problem.getStartState())
+    # print "Start's successors:", problem.getSuccessors(problem.getStartState())
     "*** YOUR CODE HERE ***"
     stack=util.Stack()
     stack.push(problem.getStartState())
@@ -125,8 +125,35 @@ def depthFirstSearch(problem):
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
-
+    queue=util.Queue()
+    queue.push(problem.getStartState())
+    visited=set()
+    visited.add(problem.getStartState())
+    relation={}
+    goal=None
+    while queue:
+        curr=queue.pop()
+        if problem.isGoalState(curr):
+            goal=curr
+            break
+        for neighbor in problem.getSuccessors(curr):
+            if neighbor[0] not in visited:
+                visited.add(neighbor[0])
+                queue.push(neighbor[0])
+                relation[neighbor[0]]=[curr,neighbor[1]]
+    if goal:
+        result=util.Stack()
+        goal=relation[goal]
+        while goal[0] in relation:
+            result.push(goal[1])
+            goal=relation[goal[0]]
+        result.push(goal[1])
+        solution=[]
+        while not result.isEmpty():
+            solution.append(result.pop())
+        print solution
+        return solution
+    return None
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
