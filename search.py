@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -90,74 +90,50 @@ def depthFirstSearch(problem):
     # print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     # print "Start's successors:", problem.getSuccessors(problem.getStartState())
     "*** YOUR CODE HERE ***"
-    stack=util.Stack()
-    stack.push(problem.getStartState())
+    fringe=util.Stack()
+    fringe.push((problem.getStartState(),[]))
     visited=set()
-    relation={}
-    goal=None
-    while not stack.isEmpty():
-        curr=stack.pop()
+    while not fringe.isEmpty():
+        curr,path=fringe.pop()
         if problem.isGoalState(curr):
-            goal=curr
-            break
-        else:
-            if curr not in visited:
-                visited.add(curr)
-                for neighbor in problem.getSuccessors(curr):
-                    if neighbor[0] not in visited:
-                        relation[neighbor[0]]=[curr,neighbor[1]]
-                        stack.push(neighbor[0])
-    if goal:
-        result=util.Stack()
-        goal=relation[goal]
-        while goal[0] in relation:
-            result.push(goal[1])
-            goal=relation[goal[0]]
-        result.push(goal[1])
-        solution=[]
-        while not result.isEmpty():
-            solution.append(result.pop())
-        print solution
-        return solution
-    return None
-
+            return path
+        if curr not in visited:
+            visited.add(curr)
+            for next,directoin,cost in problem.getSuccessors(curr):
+                if next not in visited:
+                    fringe.push((next,path+[directoin]))
+    return []
 
 def breadthFirstSearch(problem):
-    """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    queue=util.Queue()
-    queue.push(problem.getStartState())
-    visited=set()
-    visited.add(problem.getStartState())
-    relation={}
-    goal=None
-    while queue:
-        curr=queue.pop()
-        if problem.isGoalState(curr):
-            goal=curr
-            break
-        for neighbor in problem.getSuccessors(curr):
-            if neighbor[0] not in visited:
-                visited.add(neighbor[0])
-                queue.push(neighbor[0])
-                relation[neighbor[0]]=[curr,neighbor[1]]
-    if goal:
-        result=util.Stack()
-        goal=relation[goal]
-        while goal[0] in relation:
-            result.push(goal[1])
-            goal=relation[goal[0]]
-        result.push(goal[1])
-        solution=[]
-        while not result.isEmpty():
-            solution.append(result.pop())
-        print solution
-        return solution
-    return None
+    fringe = util.Queue()
+    fringe.push( (problem.getStartState(), []) )
+    visited = []
+    visited.append(problem.getStartState())
+    while not fringe.isEmpty():
+        node, actions = fringe.pop()
+        if problem.isGoalState(node):
+            return actions
+        for coord, direction, steps in problem.getSuccessors(node):
+            if not coord in visited:
+                fringe.push((coord, actions + [direction]))
+                visited.append(coord)
+    return []
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    pqueue=util.PriorityQueue()
+    pqueue.push((problem.getStartState(),0,[]),0)
+    visited={}
+    visited[problem.getStartState()]=0
+    while not pqueue.isEmpty():
+        curr,cumCost,actions=pqueue.pop()
+        if problem.isGoalState(curr):
+            return actions
+        for next,direction,cost in problem.getSuccessors(curr):
+            if next not in visited or visited[next]>cost+cumCost:
+                visited[next]=cumCost+cost
+                pqueue.push((next,cumCost+cost,actions+[direction]),cumCost+cost)
+    return []
 
 def nullHeuristic(state, problem=None):
     """
@@ -169,7 +145,36 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    pqueue=util.PriorityQueue()
+    pqueue.push((problem.getStartState(),heuristic(problem.getStartState(),problem),[]),heuristic(problem.getStartState(),problem))
+    if len(problem.getStartState())>1 and type(problem.getStartState()[1])!=type(1) :
+        visited={}
+        visited[problem.getStartState()[0]]=heuristic(problem.getStartState(),problem)
+        while not pqueue.isEmpty():
+            curr,cumCost,actions=pqueue.pop()
+            currHeuristic=heuristic(curr,problem)
+            if problem.isGoalState(curr):
+                return actions
+            for next,direction,cost in problem.getSuccessors(curr):
+                nextHeuristic=heuristic(next,problem)
+                if next[0] not in visited or visited[next[0]]>cost+cumCost+nextHeuristic-currHeuristic:
+                    visited[next[0]]=cumCost+cost+nextHeuristic-currHeuristic
+                    pqueue.push((next,cumCost+cost+nextHeuristic-currHeuristic,actions+[direction]),cumCost+cost+nextHeuristic-currHeuristic)
+        return []
+    else:
+        visited={}
+        visited[problem.getStartState()]=heuristic(problem.getStartState(),problem)
+        while not pqueue.isEmpty():
+            curr,cumCost,actions=pqueue.pop()
+            currHeuristic=heuristic(curr,problem)
+            if problem.isGoalState(curr):
+                return actions
+            for next,direction,cost in problem.getSuccessors(curr):
+                nextHeuristic=heuristic(next,problem)
+                if next not in visited or visited[next]>cost+cumCost+nextHeuristic-currHeuristic:
+                    visited[next]=cumCost+cost+nextHeuristic-currHeuristic
+                    pqueue.push((next,cumCost+cost+nextHeuristic-currHeuristic,actions+[direction]),cumCost+cost+nextHeuristic-currHeuristic)
+        return []
 
 
 # Abbreviations
